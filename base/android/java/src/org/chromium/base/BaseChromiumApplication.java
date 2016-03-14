@@ -7,7 +7,7 @@ package org.chromium.base;
 import android.app.Application;
 import android.content.Context;
 
-import org.chromium.base.multidex.ChromiumMultiDexInstaller;
+import org.chromium.base.multidex.ChromiumMultiDex;
 
 /**
  * Basic application functionality that should be shared among all browser applications.
@@ -27,7 +27,7 @@ public class BaseChromiumApplication extends Application {
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
-        ChromiumMultiDexInstaller.install(this);
+        ChromiumMultiDex.install(this);
     }
 
     public void onCreate() {
